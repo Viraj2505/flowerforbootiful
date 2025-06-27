@@ -1,0 +1,293 @@
+﻿@charset "utf8";
+
+/*                                            ! Animated Flower Started Here ...
+=======================================================================================================================*/
+*,
+*:after,
+*:before,
+html
+	{box-sizing:border-box}
+
+body{
+	background:#000;
+	margin:0;
+	padding:0;
+	overflow:hidden
+	}
+
+div
+	{display:block;position:absolute}
+
+.container{
+	width:250px;
+	height:250px;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%)
+	}
+
+.center{
+	background:#632c65;
+	width:80px;
+	height:80px;
+	top:85px;
+	left:85px;
+	border-radius:50%;
+	transform:scale(0,0);
+	animation:center 10s ease infinite alternate
+	}
+
+.center:before{
+	background:#e2a9e5;
+	content:"";
+	width:1px;
+	height:1px;
+	top:40px;
+	left:40px;
+	display:block;
+	position:absolute;
+	box-shadow:
+	6px 6px #e2a9e5,
+	-6px -8px #e2a9e5,
+	6px -6px #e2a9e5,
+	-6px 6px #e2a9e5,
+	-10px -2px #e2a9e5,
+	0 -12px #e2a9e5,
+	2px 10px #e2a9e5,
+	8px 0 #e2a9e5,
+	-12px 2px #e2a9e5,
+	-5px 0 #e2a9e5,
+	0 -6px #e2a9e5,
+	0 5px #e2a9e5,
+	5px -10px #e2a9e5,
+	-10px -6px #e2a9e5,
+	-4px 10px #e2a9e5,
+	-10px 6px #e2a9e5,
+	10px 4px #e2a9e5,
+	10px -4px #e2a9e5,
+	-4px -4px #e2a9e5,
+	4px 0 #e2a9e5
+	}
+
+.layers_1{
+	width:140px;
+	height:140px;
+	top:55px;
+	left:55px;
+	z-index:3;
+	border-radius:50%;
+	transform:rotate(360deg) scale(0,0);
+	animation:layers_1 10s 2s ease infinite alternate
+	}	
+
+.layers_2{
+	width:170px;
+	height:170px;
+	top:40px;
+	left:40px;
+	z-index:2;
+	border-radius:50%;
+	transform:rotate(0deg) scale(0,0);
+	animation:layers_2 10s 1.5s ease infinite alternate
+	}
+
+.layers_3{
+	width:200px;
+	height:200px;
+	top:25px;
+	left:25px;
+	z-index:1;
+	border-radius:50%;
+	transform:rotate(360deg) scale(0,0);
+	animation:layers_3 10s 1s ease infinite alternate
+	}
+
+.layers_4{
+	width:230px;
+	height:230px;
+	top:10px;
+	left:10px;
+	border-radius:50%;
+	transform:rotate(0deg) scale(0,0);
+	animation:layers_4 10s .5s ease infinite alternate
+	}
+
+[class*="leaf"]{
+	width:20px;
+	height:100%;
+	top:50%;
+	left:50%
+	}
+
+.leaf_1{transform:translate(-50%,-50%)}
+.leaf_2{transform:translate(-50%,-50%) rotate(20deg)}
+.leaf_3{transform:translate(-50%,-50%) rotate(40deg)}
+.leaf_4{transform:translate(-50%,-50%) rotate(60deg)}
+.leaf_5{transform:translate(-50%,-50%) rotate(80deg)}
+.leaf_6{transform:translate(-50%,-50%) rotate(100deg)}
+.leaf_7{transform:translate(-50%,-50%) rotate(120deg)}
+.leaf_8{transform:translate(-50%,-50%) rotate(140deg)}
+.leaf_9{transform:translate(-50%,-50%) rotate(160deg)}
+
+[class*="leaf"]:before,
+[class*="leaf"]:after{
+	background:linear-gradient(0deg,#e2a9e5 0%,#632c65 100%);
+	content:"";
+	width:100%;
+	height:40%;
+	display:block;
+	position:absolute
+	}
+
+[class*="leaf"]:before{top:0}
+[class*="leaf"]:after{bottom:0;transform:rotate(180deg)}
+
+.layers_1 [class*="leaf"]:before,
+.layers_1 [class*="leaf"]:after,
+.layers_3 [class*="leaf"]:before,
+.layers_3 [class*="leaf"]:after{
+	border-radius:150% 50% 50% 50%;
+	box-shadow:inset 0 0 2px 2px #e2a9e5,inset 2px 0 2px 2px #4b384c
+	}
+	
+.layers_2 [class*="leaf"]:before,
+.layers_2 [class*="leaf"]:after,
+.layers_4 [class*="leaf"]:before,
+.layers_4 [class*="leaf"]:after{
+	border-radius:50% 150% 50% 50%;
+	box-shadow:inset 0 0 2px 2px #e2a9e5,inset -2px 0 2px 2px #4b384c
+	}
+
+@keyframes center{to{transform:scale(1,1)}}
+@keyframes layers_1{to{transform:rotate(10deg) scale(1,1)}}
+@keyframes layers_2{to{transform:rotate(340deg) scale(1,1)}}
+@keyframes layers_3{to{transform:rotate(10deg) scale(1,1)}}
+@keyframes layers_4{to{transform:rotate(360deg) scale(1,1)}}
+/*                                             ! Animated Flower Ended Here ...
+=======================================================================================================================*/
+
+/* This Is Not Part Of Animated Flower */
+.me{
+	background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1735448/profile/profile-80.jpg?1528976396")no-repeat center / contain;
+	width:40px;
+	height:40px;
+	bottom:16px;
+	right:16px;
+	display:block;
+	position:fixed;
+	border-radius:50%;
+	z-index:999;
+	animation:me 2s linear infinite alternate
+	}
+
+@keyframes me{
+	from{transform:translateY(-4px)}
+	to{transform:translateY(4px)}
+	}
+
+.me:hover span
+	{right:50px;opacity:1;visibility:visible}
+
+.me span{
+	width:150px;
+	top:10px;
+	right:0;
+	display:block;
+	position:absolute;
+	color:#008080;
+	font-family:Tahoma,Geneva,sans-serif;
+	font-size:16px;
+	font-style:normal;
+	font-weight:400;
+	text-align:center;
+	z-index:-1;
+	opacity:0;
+	visibility:hidden;
+	transition:all .5s ease
+	}
+
+
+.heart{
+	width:200px;
+	height:200px;
+	top:50%;
+	left:50%;
+	display:block;
+	position:absolute;
+	z-index:1;
+	transform:translate(-50%,-50%);
+	animation:heart 4s ease infinite
+	}
+
+@keyframes heart{
+	0%{transform:translate(-50%,-50%) scale(.2,.2)}
+	8%{transform:translate(-50%,-50%) scale(.4,.4)}
+	16%{transform:translate(-50%,-50%) scale(.3,.3)}
+	24%{transform:translate(-50%,-50%) scale(.5,.5)}
+	32%{transform:translate(-50%,-50%) scale(.4,.4)}
+	40%{transform:translate(-50%,-50%) scale(.6,.6)}
+	48%{transform:translate(-50%,-50%) scale(.5,.5)}
+	56%{transform:translate(-50%,-50%) scale(.7,.7)}
+	64%{transform:translate(-50%,-50%) scale(.6,.6)}
+	72%{transform:translate(-50%,-50%) scale(.8,.8)}
+	80%{transform:translate(-50%,-50%) scale(.7,.7)}
+	88%{transform:translate(-50%,-50%) scale(.9,.9)}
+	96%{transform:translate(-50%,-50%) scale(.8,.8)}
+	100%{transform:translate(-50%,-50%) scale(1,1)}
+	}
+
+.heart:before{
+	background:#fff;
+	width:170px;
+	height:170px;
+	top:15px;
+	left:15px;
+	display:block;
+	position:absolute;
+	content:"";
+	border-radius:50%
+	}
+
+.heart div{
+	background:#ff0000;
+	width:80px;
+	height:120px;
+	top:40px;
+	display:block;
+	position:absolute;
+	border-radius:50%
+	}
+
+.left{left:45px;transform:rotate(330deg)}
+.right{right:45px;transform:rotate(30deg)}
+
+.shadow{
+	width:200px;
+	height:200px;
+	top:50%;
+	left:50%;
+	display:block;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	animation:shadow 4s ease infinite
+	}
+
+@keyframes shadow{
+	0%,96%{transform:translate(-50%,-50%) scale(0,0)}
+	100%{transform:translate(-50%,-50%) scale(1,1)}
+	}
+
+[class*="glow_"]{
+	background:#ff0000;
+	width:10px;
+	height:100%;
+	top:0;
+	left:95px;
+	display:block;
+	position:absolute;
+	border-radius:10px
+	}
+
+.glow_2{transform:rotate(45deg)}
+.glow_3{transform:rotate(90deg)}
+.glow_4{transform:rotate(135deg)}
